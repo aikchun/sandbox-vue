@@ -1,6 +1,16 @@
 <script>
+import { reactive } from 'vue'
 import UserCard from './UserCard.vue'
 export default {
+  setup() {
+    const state = reactive({
+      userList: []
+    })
+
+    return {
+      state
+    }
+  },
   components: {
     UserCard
   },
@@ -11,7 +21,7 @@ export default {
     fetchUsers: async function () {
       try {
         const response = await fetch('https://jsonplaceholder.typicode.com/users')
-        this.users = await response.json()
+        this.state.userList = await response.json()
       } catch (e) {
         console.error(e)
       }
@@ -25,7 +35,7 @@ export default {
 <template>
   <h1>Users</h1>
   <div class="gutters">
-    <UserCard v-for="user in users" :key="`user-${user.id}`" :name="user.name" />
+    <UserCard v-for="user in state.userList" :key="`user-${user.id}`" :name="user.name" />
   </div>
 </template>
 <style>
