@@ -9,7 +9,7 @@
   </main>
 </template>
 
-<style>
+<style scoped>
 main {
   display: flex;
   justify-content: center;
@@ -27,7 +27,7 @@ label {
   margin-bottom: 5px;
 }
 
-input[type="email"] {
+input[type='email'] {
   padding: 0.5rem;
   margin-bottom: 30px;
 }

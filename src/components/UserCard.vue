@@ -12,9 +12,13 @@ defineProps({
   <div class="user-card">
     Name: {{ name }}
     <div>{{ newCount }}</div>
+    <button type="button">fav</button>
   </div>
 </template>
-<style>
+<style scoped>
+button {
+  padding: 10px;
+}
 .user-card {
   border: 1px solid aquamarine;
   padding: 1rem;
