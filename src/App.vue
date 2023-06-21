@@ -40,7 +40,10 @@ export default {
       <a href="#" @click.prevent="showUsersPage">Users</a>
     </nav>
   </header>
-  <component :is="renderPage" />
+  <Suspense>
+    <component :is="renderPage" />
+    <template #fallback> Loading... </template>
+  </Suspense>
   <!-- <HomePage v-if="currentPage === 'Home'" /> -->
   <!-- <LoginPage v-else /> -->
 </template>
