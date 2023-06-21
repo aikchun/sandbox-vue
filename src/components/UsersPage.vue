@@ -1,9 +1,7 @@
 <script setup>
+import { useUserList } from '../composables/useUserList.js'
 import UserCard from './UserCard.vue'
-import { reactive } from 'vue'
-const state = reactive({
-  userList: []
-})
+const userStore = useUserList()
 
 async function fetchUsers() {
   const response = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -11,12 +9,13 @@ async function fetchUsers() {
   return data
 }
 
-state.userList = await fetchUsers()
+userStore.userList = await fetchUsers()
 </script>
 <template>
   <h1>Users</h1>
   <div class="gutters">
-    <UserCard v-for="user in state.userList" :key="`user-${user.id}`" :name="user.name" />
+    <UserCard v-for="user in userStore.userList" :key="`user-${user.id}`" :name="user.name" />
+    <UserCard :name="`Chun`" />
   </div>
 </template>
 <style>

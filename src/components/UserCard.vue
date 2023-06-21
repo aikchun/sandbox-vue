@@ -1,15 +1,18 @@
-<script>
-export default {
-  props: {
-    name: {
-      type: String,
-      required: true
-    }
+<script setup>
+import { defineProps } from 'vue'
+import { newCount } from '../composables/countStore.js'
+defineProps({
+  name: {
+    type: String,
+    required: true
   }
-}
+})
 </script>
 <template>
-  <div class="user-card">Name: {{ name }}</div>
+  <div class="user-card">
+    Name: {{ name }}
+    <div>{{ newCount }}</div>
+  </div>
 </template>
 <style>
 .user-card {
