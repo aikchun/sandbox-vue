@@ -7,23 +7,25 @@ defineProps({
     required: true
   }
 })
+const color = 'blue'
 </script>
 <template>
-  <div class="user-card">
+  <div :class="$style.card">
     Name: {{ name }}
     <div>{{ newCount }}</div>
-    <button type="button">fav</button>
+    <button type="button" :class="$style.button">fav</button>
   </div>
 </template>
-<style scoped>
-button {
+<style module>
+.button {
   padding: 10px;
+  border: 1px solid v-bind(color);
 }
-.user-card {
+.card {
   border: 1px solid aquamarine;
   padding: 1rem;
 }
-.user-card + .user-card {
+.card + .card {
   margin-top: 1rem;
 }
 </style>
