@@ -30,6 +30,7 @@ export default {
       <RouterLink to="/login">Login</RouterLink>
       <RouterLink to="/users">Users</RouterLink>
       <RouterLink to="/pokedex">PokeDex</RouterLink>
+      <RouterLink to="/pokedex/1">first</RouterLink>
     </nav>
   </header>
   <Suspense>

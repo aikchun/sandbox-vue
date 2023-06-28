@@ -15,5 +15,9 @@ export const routes = [
   {
     path: '/pokedex',
     component: () => import('./views/PokeDex.vue')
+  },
+  {
+    path: '/pokedex/:id',
+    component: () => import('./views/PokeMon.vue')
   }
 ]
