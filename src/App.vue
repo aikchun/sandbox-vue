@@ -1,14 +1,5 @@
 <script>
-import HomePage from './components/HomePage.vue'
-import LoginPage from './components/LoginPage.vue'
-import UsersPage from './components/UsersPage.vue'
-
 export default {
-  components: {
-    HomePage,
-    LoginPage,
-    UsersPage
-  },
   data: () => ({
     currentPage: 'Users'
   }),
@@ -35,13 +26,15 @@ export default {
   <header class="header">
     <span class="logo"> <img src="@/assets/vue-heart.png" width="30" />C'est La Vue </span>
     <nav class="nav">
-      <a href="#" @click.prevent="showHomePage">Home</a>
-      <a href="#" @click.prevent="showLoginPage">Login</a>
-      <a href="#" @click.prevent="showUsersPage">Users</a>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/login">Login</RouterLink>
+      <RouterLink to="/users">Users</RouterLink>
+      <RouterLink to="/pokedex">PokeDex</RouterLink>
     </nav>
   </header>
   <Suspense>
-    <component :is="renderPage" />
+    <RouterView />
+    <!-- <component :is="renderPage" /> -->
     <template #fallback> Loading... </template>
   </Suspense>
   <!-- <HomePage v-if="currentPage === 'Home'" /> -->

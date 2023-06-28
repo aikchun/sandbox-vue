@@ -1,6 +1,6 @@
 <script setup>
 import { useUserList } from '../composables/useUserList.js'
-import UserCard from './UserCard.vue'
+import UserCard from '../components/UserCard.vue'
 const userStore = useUserList()
 
 async function fetchUsers() {
