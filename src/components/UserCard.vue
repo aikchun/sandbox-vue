@@ -27,6 +27,7 @@ watch(localCount, (val) => {
     Name: {{ name }}
     <div>{{ localCount }}</div>
     <div>New Count: {{ newCountStore.count }}</div>
+    <div>New Double Count: {{ newCountStore.doubleCount }}</div>
     <button type="button" :class="$style.button" @click="incrementLocalCount">fav</button>
     <button type="button" :class="$style.button" @click="newCountStore.increment">
       New incrementCount
