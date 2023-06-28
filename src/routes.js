@@ -1,7 +1,4 @@
 import HomePage from './views/HomePage.vue'
-import PokeDex from './views/PokeDex.vue'
-import UsersPage from './views/UsersPage.vue'
-import LoginPage from './views/LoginPage.vue'
 export const routes = [
   {
     path: '/',
@@ -9,14 +6,14 @@ export const routes = [
   },
   {
     path: '/users',
-    component: UsersPage
+    component: () => import('./views/UsersPage.vue')
   },
   {
     path: '/login',
-    component: LoginPage
+    component: () => import('./views/LoginPage.vue')
   },
   {
     path: '/pokedex',
-    component: PokeDex
+    component: () => import('./views/PokeDex.vue')
   }
 ]
